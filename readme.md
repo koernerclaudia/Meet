@@ -2,6 +2,10 @@
 
 WIP - currently being built!
 
+## Live on Github Pages
+
+https://koernerclaudia.github.io/meet/
+
 ## Project Details
 
 This app will give users the ability to search & filter events by city. It will have offline capabilities to check back on events. 
