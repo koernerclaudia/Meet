@@ -1,30 +1,28 @@
 // src/components/NumberOfEvents.js
 
+import { useState } from "react";
 
-import React, { useState } from 'react';
+const NumberOfEvents = ({ }) => {
 
-const NumberOfEvents = ({ updateEventCount = () => {} }) => {
-  const [eventCount, setEventCount] = useState(32); // Default number of events
+  const [number, setNumber] = useState(32);
 
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setEventCount(value);
-    updateEventCount(value);  // Assuming updateEventCount is passed as a prop
-  };
+  const handleInputChanged = (event) => {
+    const value = event.target.value;
+    setNumber(value);
+  }
 
   return (
     <div id="number-of-events">
-      <label htmlFor="number-of-events">Number of Events:</label>
+      <label htmlFor="number-of-events-input">Number of Events: </label>
       <input
-        id="number-of-events"
         type="text"
-        className="event-number-input"
-        value={eventCount}
-        onChange={handleInputChange}
-        aria-label="Number of Events"
+        id="number-of-events-input"
+        className="number-of-events-input"
+        value={number}
+        onChange={handleInputChanged}
       />
     </div>
   );
-};
+}
 
 export default NumberOfEvents;

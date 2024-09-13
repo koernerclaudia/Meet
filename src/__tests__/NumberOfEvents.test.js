@@ -1,34 +1,32 @@
 // src/__tests__/NumberOfEvents.test.js
 
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import NumberOfEvents from '../components/NumberOfEvents';
 
 describe('<NumberOfEvents /> component', () => {
-  test('renders an element with the role of textbox and default value of 32', () => {
-    const mockUpdateEventCount = jest.fn(); // Create a mock function
-    render(<NumberOfEvents updateEventCount={mockUpdateEventCount} />);
-    
-    // Assert that the component contains an input element with role 'textbox'
-    const inputElement = screen.getByRole('textbox');
-    expect(inputElement).toBeInTheDocument();
+  let NumberOfEventsComponent;
+  beforeEach(() => {
+    NumberOfEventsComponent = render(<NumberOfEvents />);
+  });
 
+  test('renders number of events text input', () => {
+    const numberTextBox = NumberOfEventsComponent.queryByRole('textbox');
+    expect(numberTextBox).toBeInTheDocument();
+    expect(numberTextBox).toHaveClass('number-of-events-input');
+  });
 
-     // Assert that the input element has the default value of 32
-     expect(inputElement.value).toBe('32');
-    });
+  test('default number is 32', async () => {
+    const numberTextBox = NumberOfEventsComponent.queryByRole('textbox');
+    expect(numberTextBox).toHaveValue("32");
+  });
 
-test('updates the value of the input field when user types into it', async () => {
-        render(<NumberOfEvents />);
-        
-        // Get the input element
-        const inputElement = screen.getByRole('textbox');
-        
-        // Simulate user typing and backspacing
-        await userEvent.clear(inputElement); // Clears the input
-        await userEvent.type(inputElement, '10'); // Types '10'
-        
-        // Assert that the input element has the value '10'
-        expect(inputElement.value).toBe('10');
-      });
+  test('number of events text box value changes when the user types in it', async () => {
+    const user = userEvent.setup();
+    const numberTextBox = NumberOfEventsComponent.queryByRole('textbox');
+    await user.type(numberTextBox, "123")
+
+    // 32 (the default value already written) + 123
+    expect(numberTextBox).toHaveValue("32123");
+  });
 });
