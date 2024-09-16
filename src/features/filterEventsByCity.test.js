@@ -4,12 +4,10 @@ import { render, within, waitFor } from '@testing-library/react';
 import { getEvents } from '../api';
 import userEvent from '@testing-library/user-event';
 
-
-
 const feature = loadFeature('./src/features/filterEventsByCity.feature'); // expects the file path to start from the root of the project
 
 defineFeature(feature, test => {
-test('When user hasn’t searched for a city, show upcoming events from all cities.', ({ given, when, then }) => {
+test('When user has not searched for a city, show upcoming events from all cities.', ({ given, when, then }) => {
     given('a user has opened the app.', () => {
     });
 

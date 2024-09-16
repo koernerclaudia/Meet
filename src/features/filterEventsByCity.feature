@@ -1,5 +1,5 @@
 Feature: Filter events by city
-    Scenario: When user hasn’t searched for a city, show upcoming events from all cities.
+    Scenario: When user has not searched for a city, show upcoming events from all cities.
         Given a user has opened the app.
         When they have opened the app, but not yet taken any action.
         Then the user should see a list of 32 upcoming events - across all locations.

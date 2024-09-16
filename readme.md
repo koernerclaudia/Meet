@@ -32,7 +32,7 @@ Calendar API (OAuth2 authentication flow)  to fetch upcoming events.
 
 ***User Story:** As a user, I should be able to filter events by city to see particular events in my location and see a shorter list, making it easier to browse location-based events.* 
 
-***Scenario 1:** When user hasn’t searched for a city, show upcoming events from all cities.*
+***Scenario 1:** When user has not searched for a city, show upcoming events from all cities.*
 
 - Given: A user has opened the app.
 - When: They are on the app, but have not yet taken any action.
