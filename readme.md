@@ -34,18 +34,18 @@ Calendar API (OAuth2 authentication flow)  to fetch upcoming events.
 
 ***Scenario 1:** When user hasn’t searched for a city, show upcoming events from all cities.*
 
-- Given: A user is on the app 
-- When: They have not yet taken any action.
-- Then: All events available in all locations shall be listed.
+- Given: A user has opened the app.
+- When: They are on the app, but have not yet taken any action.
+- Then: The user should see a list of 32 upcoming events - across all locations.
 
 ***Scenario 2:** User should see a list of suggestions when they search for a city.*
 - Given: A user is on the app.
-- When: and has written the name of a city into the search box
+- When: They have written the name of a city into the search box
 - Then: A dropdown of matches to that city as well as an option to ‘see all cities’ should appear.
 
 ***Scenario 3:** User can select a city from the suggested list.*
-- Given: A user is on the app 
-- When: and picks an option from the dropdown of choices that his input generated
+- Given: A user types a particular city in the city textbox.
+- When: and picks the relevant option from the dropdown of choices that his input generated
 - Then: the chosen city shall be highlighted and selected → output in the search field.
 
 ---
