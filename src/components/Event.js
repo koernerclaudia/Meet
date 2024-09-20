@@ -6,9 +6,9 @@ const Event = ({ event }) => {
   const [showDetails, setShowDetails] = useState(false);
   return (
     <li className="event">
-      <h2>{event && event.summary}</h2>
+      <h3>{event && event.summary}</h3>
       <p>{event && event.location}</p>
-      <p>{event && (new Date(event.created)).toUTCString()}</p>
+      <p>{event && (new Date(event.originalStartTime.dateTime)).toUTCString()}</p>
       {showDetails ?
         <p className="details">{event && event.description}</p> :
         null

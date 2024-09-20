@@ -44,6 +44,7 @@ describe('filter events by city', () => {
     page = await browser.newPage();
     await page.goto('http://localhost:3000/');
     await page.waitForSelector('.event');
+    setInfoAlert={() => { }}
   });
 
   afterAll(() => {
@@ -67,7 +68,7 @@ describe('filter events by city', () => {
     const timeout = 50000;
     await page.click('#city-search input');
     await page.keyboard.type('Berlin');
-    await page.waitForSelector('#city-search .suggestions li', { timeout });
+    await page.waitForSelector('#city-search .suggestions li', { timeout });w
 
     // Find the suggestion that contains "Berlin, Germany"
     const berlinSuggestion = await page.evaluate(() => {

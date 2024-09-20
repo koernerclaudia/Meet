@@ -15,6 +15,17 @@ ul {
 
 p {
   margin: 5px 0;
+  font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  color: #4d3485;
+}
+
+h3 {
+ line-height: 1.2;
+ margin-top: 5px;
 }
 
 input[type="text"],
@@ -50,13 +61,17 @@ input[type="number"] {
   margin: 0;
   font-size: 14px;
   box-shadow: 10px 10px 16px -12px rgba(0, 0, 0, 0.75);
+  background-color: #e2d2ff;
+  border-radius: 4px;
 }
 
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #eee;
+  background-color: #e2d2ff;
   cursor: default;
+  border-radius: 4px;
+  text-color: #4d3485;
 }
 
 .suggestions > li:last-child {
@@ -65,7 +80,8 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #4d3485;
+  color: #ffffff;
 }
 
 .event {
@@ -75,14 +91,45 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
+  max-width: 600px;
+  margin: 10px auto;
+  background-color: #efe8fc;
 }
 
 .details-btn {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 10px;
+  bottom: 10px;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #4d3485;
+  color: #ffffff;
+  
+}
+
+.details-btn:hover {
+  background-color: #ffffff;
+  color: #4d3485;
+  
+}
+
+.logo  {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.alerts-container {
+  position: fixed;
+  top: 40px;
+  left: 30px;
+  width: 250px;
+  z-index: 1000;
 }

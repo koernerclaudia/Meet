@@ -41,6 +41,7 @@ test('When user has not searched for a city, show upcoming events from all citie
       CitySearchDOM = AppDOM.querySelector('#city-search');
       const citySearchInput = within(CitySearchDOM).queryByRole('textbox');  
       await user.type(citySearchInput, "Berlin");
+      setInfoAlert={() => { }}
     });
 
     then('a dropdown of matches to that city as well as an option to ‘see all cities’ should appear.', async () => {
@@ -61,6 +62,7 @@ test('When user has not searched for a city, show upcoming events from all citie
       CitySearchDOM = AppDOM.querySelector('#city-search');
       citySearchInput = within(CitySearchDOM).queryByRole('textbox');  
       await user.type(citySearchInput, "Berlin");
+      setInfoAlert={() => { }}
     });
 
     let suggestionListItems;

@@ -25,8 +25,8 @@ defineFeature(feature, test => {
             await waitFor(() => {
               const EventListItems = within(EventListDOM).queryAllByRole('listitem');
               expect(EventListItems.length).toBe(32);
+             
             });
-      
           });
       });
 
@@ -34,18 +34,18 @@ defineFeature(feature, test => {
       let NumberOfEventsComponent;
   
       given('a user is on the app.', () => {
-        NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} />);
+        NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}}/>);
       });
   
       when('they change the number of events displayed.', async () => {
-        const numverOfEvents = NumberOfEventsComponent.getByRole('textbox');  // Select the input field
+        const numberOfEvents = NumberOfEventsComponent.getByRole('textbox');  // Select the input field
         const user = userEvent.setup();  // Set up user interactions
-        await user.type(numverOfEvents, '{backspace}{backspace}10');  // Simulate typing "10"
+        await user.type(numberOfEvents, '{backspace}{backspace}10');  // Simulate typing "10"
       });
   
       then('the app should update to show the specified number of events.', async () => {
-        const numverOfEvents = NumberOfEventsComponent.getByRole('textbox');  // Re-select the input field
-        expect(numverOfEvents).toHaveValue('10');  // Check if the value is now "10"
+        const numberOfEvents = NumberOfEventsComponent.getByRole('textbox');  // Re-select the input field
+        expect(numberOfEvents).toHaveValue('10');  // Check if the value is now "10"
       });
     });
   });
