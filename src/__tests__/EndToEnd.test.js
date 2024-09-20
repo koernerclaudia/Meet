@@ -1,6 +1,6 @@
-jest.setTimeout(70000);
-
 import puppeteer from 'puppeteer';
+
+jest.setTimeout(30000);
 
 
 describe('show/hide event details', () => {
@@ -73,7 +73,7 @@ describe('filter events by city', () => {
   });
 
   test('User can select a city from the suggested list', async () => {
-    const timeout = 70000;
+    const timeout = 30000;
     await page.click('#city-search input');
     await page.keyboard.type('Berlin');
     await page.waitForSelector('#city-search .suggestions li', { timeout });

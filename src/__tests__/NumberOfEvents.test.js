@@ -26,7 +26,7 @@ describe('<NumberOfEvents /> component', () => {
 describe('<NumberOfEvents /> integration', () => {
   let NumberOfEventsComponent;
   beforeEach(() => {
-    NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} />);
+    NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => { }}/>);
   });
   
   test('change number of events when a user types in the textbox', async () => { 
@@ -34,7 +34,7 @@ describe('<NumberOfEvents /> integration', () => {
     const user = userEvent.setup(); 
     await user.type(numverOfEvents, '{backspace}{backspace}10');   
     const allEvents = await getEvents(); 
-    NumberOfEventsComponent.rerender(<NumberOfEvents setCurrentNOE={allEvents} />);   
+    NumberOfEventsComponent.rerender(<NumberOfEvents setCurrentNOE={allEvents} setErrorAlert={() => { }}/>);   
     expect(numverOfEvents).toHaveValue('10'); 
   }); 
 });
