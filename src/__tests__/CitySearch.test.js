@@ -64,6 +64,7 @@ describe('<CitySearch /> component', () => {
     CitySearchComponent.rerender(<CitySearch
       allLocations={allLocations}
       setCurrentCity={() => { }}
+      setInfoAlert={() => { }}
     />);
 
     const cityTextBox = CitySearchComponent.queryByRole('textbox');

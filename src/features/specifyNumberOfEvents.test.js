@@ -34,7 +34,7 @@ defineFeature(feature, test => {
       let NumberOfEventsComponent;
   
       given('a user is on the app.', () => {
-        NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} />);
+        NumberOfEventsComponent = render(<NumberOfEvents setCurrentNOE={() => {}} setErrorAlert={() => {}}/>);
       });
   
       when('they change the number of events displayed.', async () => {
