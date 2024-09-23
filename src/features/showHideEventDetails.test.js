@@ -9,7 +9,7 @@ defineFeature(feature, test => {
   const event = {
     summary: 'Test Event',
     location: 'Test Location',
-    created: new Date().toISOString(),
+    start: { dateTime: new Date().toISOString() },  
     description: 'Test Description'
   };
 

@@ -8,7 +8,7 @@ const Event = ({ event }) => {
     <li className="event">
       <h2>{event && event.summary}</h2>
       <p>{event && event.location}</p>
-      <p>{event && (new Date(event.dateTime)).toUTCString()}</p>
+      <p>{event && (new Date(event.start.dateTime)).toUTCString()}</p>
       {showDetails ?
         <p className="details">{event && event.description}</p> :
         null
