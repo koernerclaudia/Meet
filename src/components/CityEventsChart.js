@@ -28,10 +28,10 @@ import {
     };
 
     return (
-      <ResponsiveContainer width="99%" height={400}>
+      <ResponsiveContainer width="99%" height={350}>
         <ScatterChart
           margin={{
-            top: 20,
+            top: 25,
             right: 20,
             bottom: 40,
             left: 20,
@@ -40,11 +40,11 @@ import {
           <CartesianGrid />
           <XAxis
           type="category" dataKey="city" name="City"
-          angle={60} interval={0} tick={{ dx: 20, dy: 20, fontSize: 8 }}
+          angle={60} interval={0} tick={{ dx: 5, dy: 5, fontSize: 10, fontWeight: "bold",   textAnchor: "start"}}
         />
           <YAxis type="number" dataKey="count" name="Number of events" allowDecimals={false} />
           <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter name="A school" data={data} fill="#8884d8" />
+          <Scatter name="A school" data={data} fill="#0088FE" />
         </ScatterChart>
       </ResponsiveContainer>
     );
