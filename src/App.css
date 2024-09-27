@@ -2,10 +2,14 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  color: #2d4254;
+  font-size: 14px;
+
 }
 
 .App * {
   box-sizing: border-box;
+ 
 }
 
 ul {
@@ -18,7 +22,23 @@ p {
 }
 
 h2 {
-  color: #0088FE;
+  color: #ef3a7c;
+  margin: 5 auto;
+}
+
+h3 {
+  color: #4e90d8;
+  margin: 2px auto;
+}
+
+.hr {
+  border: 0.5px solid #4e90d8;
+  margin: 10px 0;
+}
+
+.logo {
+  width: 150px;
+  margin: 0 auto;
 }
 
 input[type="text"],
@@ -26,7 +46,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid #888;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -36,6 +56,15 @@ input[type="number"] {
 
 .city {
   width: 250px;
+  justify-self: right;
+  color: #888;
+}
+
+.number-of-events-input {
+  width: 100px;
+  justify-self: right;
+  color: #2d4254;
+  font-size: 14px;
 }
 
 #city-search {
@@ -43,6 +72,7 @@ input[type="number"] {
   flex-direction: column;
   margin: auto;
   position: relative;
+  font-size: 14px;
 }
 
 .suggestions {
@@ -59,7 +89,7 @@ input[type="number"] {
 .suggestions > li {
   text-align: left;
   padding: 8px 6px 8px 10px;
-  background-color: #eee;
+  background-color: #fcf9eb;
   cursor: default;
 }
 
@@ -69,32 +99,48 @@ input[type="number"] {
 }
 
 .suggestions > li:hover {
-  background-color: #bcdcdb;
+  background-color: #4e90d8;
+  color: #ffffff;
 }
 
 .event {
-  padding: 10px 10px 35px;
+  padding: 10px 10px 35px 10px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid #ef3a7c;
   border-radius: 4px;
   position: relative;
 }
 
 .details-btn {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 15px;
+  bottom: 15px;
   padding: 5px 8px;
   border-radius: 4px;
   outline: none;
   cursor: pointer;
+  color: #ffffff;
+  background-color: #4e90d8;
+  border: none;
+}
+
+.details-btn:hover {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  padding: 5px 8px;
+  border: 1px solid #4e90d8;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  color: #4e90d8;
+  background-color: #ffffff;
 }
 
 .alerts-container {
-  position: fixed;
-  top: 0px;
-  left: 20px;
+  position: center;
+  margin: 0 auto;
   width: 250px;
   z-index: 1000;
 }
@@ -107,6 +153,7 @@ input[type="number"] {
 
 @media (max-width: 768px) {
   .charts-container {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
+    align-items: center;
   }
 }

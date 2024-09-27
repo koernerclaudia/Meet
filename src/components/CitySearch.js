@@ -9,7 +9,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
 
   useEffect(() => {
     setSuggestions(allLocations);
-  }, [allLocations])
+  }, [`${allLocations}`]);
 
 
   const handleInputChanged = (event) => {
@@ -22,7 +22,7 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
 
     let infoText;
     if (filteredLocations.length === 0) {
-      infoText = "This city is not included in our list. Please try another city.";
+      infoText = "We can not find the city you are looking for. Please try another city"
     } else {
       infoText = ""
     }
@@ -47,15 +47,16 @@ const CitySearch = ({ allLocations, setCurrentCity, setInfoAlert }) => {
         onFocus={() => setShowSuggestions(true)}
         onChange={handleInputChanged}
       />
-      {showSuggestions &&
+      {showSuggestions ?
         <ul className="suggestions">
-          {suggestions.map((suggestion) => (
-             <li onClick={handleItemClicked} key={suggestion}>{suggestion}</li>
-          ))}
-          <li key='See all cities' onClick={handleItemClicked}>
-            <b>See all cities</b>
+          {suggestions.map((suggestion) => {
+            return <li onClick={handleItemClicked} key={suggestion}>{suggestion}</li>
+          })}
+          <li key='All cities' onClick={handleItemClicked}>
+            <b>All cities</b>
           </li>
         </ul>
+        : null
       }
     </div>
   )

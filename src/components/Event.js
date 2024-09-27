@@ -6,13 +6,13 @@ const Event = ({ event }) => {
   const [showDetails, setShowDetails] = useState(false);
   return (
     <li className="event">
-      <h2>{event && event.summary}</h2>
+      <h3>{event && event.summary}</h3>
       <p>{event && event.location}</p>
       <p>{event && (new Date(event.start.dateTime)).toUTCString()}</p>
 
       {showDetails && (
         <>
-          <hr style={{ margin: "10px 0" }} /> {/* Horizontal line before details */}
+          <hr className="hr" /> {/* Horizontal line before details */}
           <p className="details">{event && event.description}</p>
         </>
       )}

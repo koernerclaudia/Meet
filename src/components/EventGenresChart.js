@@ -46,7 +46,7 @@ const EventGenresChart = ({ events }) => {
       
 
 
-      const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
+      const colors = ['#43b4d6', '#dda540', '#09ba59', '#4e90d8', '#ef3a7c'];
 
     return (
             <ResponsiveContainer width="99%" height={300}>
@@ -69,12 +69,12 @@ const EventGenresChart = ({ events }) => {
             ))
           }
          </Pie>     
-         <Legend width="100%" align="justify" iconSize={10} layout="horizontal"
+         <Legend width="100%" align="center" iconSize={10} layout="horizontal"
   verticalAlign="bottom"
   wrapperStyle={{
-    fontSize: '10px', // Set a smaller font size
-    marginTop: '-10px' // Optional: Adjust the margin to move the legend up
-  }}
+    fontSize: '12px', // Set a smaller font size
+    marginTop: '-10px', // Optional: Adjust the margin to move the legend up
+    padding: '10px 0' }}// Add some padding
 />
               </PieChart>
             </ResponsiveContainer>

@@ -1,32 +1,89 @@
-# Meet-App
+# jsMeetUp - MeetApp built with React
 
 WIP - currently being built!
 
-## Live on Github Pages
+## Table of Contents 
 
-https://koernerclaudia.github.io/meet/
+1. [Project Details](#projectdetails)
+2. [Tech Stack & Methods](#techstack)
+3. [Installation & Setup](#setup)
+4. [Key Features](#features)
+5. [Live App](#liveapp)
+6. [Restrictions](#restrictions)
+7. [User scenarios & stories](#userstories)
 
-## Project Details
+## 1. Project Details<a name="projectdetails"></a>
 
-This app will give users the ability to search & filter events by city. It will have offline capabilities to check back on events. 
+This was another assignment during my studies with CareerFoundry.
 
-## Stack
+The purpose of this project was to 
 
-ReactJS, Bootstrap, AWS Lamda (serverless progressive web application (PWA). The purpose of this project is to learn & use a test-driven development (TDD) technique. The application uses the Google
-Calendar API (OAuth2 authentication flow)  to fetch upcoming events. 
+- learn & use a test-driven development (TDD) technique and compare it to Behavioural-driven Development (BDD).
+- learn about serverless deployment / set up an AWS serverless environment and learn how to setup AWS Lambda functions
+- use Google Authentication (OAuth)
+- work with the Google Calendar API
+- learning to apply testing methods and continuous integration & delivery (CI / CD)
+- looking into Application Performance Monitoring with Atatus
+- looking into Object-oriented programming
 
-(This is another project I am setting up during my Full Stack Training with CareerFoundry.)
+The app shows a list of MeetUp Events happening in various cities - the events are loaded from a Google Calendar, using Google's API. Users are asked to authenticate via a Google Account to get access to the list of events and the stats around cities event distribution.
 
-## Key Features:
+## 2. TechStack & Method<a name="techstack"></a>
+
+- Testing methods applied (36 Tests in total):
+    - Unit Testing (using Jest)
+    - Integration Testing
+    - Acceptance Testing (Jest-Cucumber)
+    - EndtoEnd testing (Puppeteer)
+- Built: ReactJS, Recharts AWS Lamda (serverless progressive web application (PWA).  
+- User Authentication, API: Google, Google Developer Console
+- Serverless: AWS, Lambda Functions 
+- App is available for: Web, Mobile Browser, PWA
+
+## 3. Installation & Setup<a name="setup"></a>
+
+1. Download a zip of the main branch or clone the repository if you'd like to contribute
+2. Set the project up in your prefered environment and start the app:
+
+```
+npm install
+npm start
+```
+
+3. The project is set up as a CRA ('Create React App') so check the package.json file for info on the scripts.
+
+4. For testing, run:
+
+```
+npm test run
+```
+
+## 4. Key Features of the app<a name="features"></a>
+
 - Filter Events by City.
 - Show/Hide Event Details.
 - Specify Number of Events.
 - Use the App When Offline.
 - Add an App Shortcut to the Home Screen.
 - Display Charts Visualizing Event Details.
+- User is being alerted when
+    - Info: an incorrect city is requested
+    - Error: the number of events field is empty, does not contain a number 0< or has letters
+    - Warning: they are offline and data shown might not be up to date
 
 
-## Project Features - Scenarios, User Stories, Gherkin
+## 5. Live App<a name="liveapp"></a>
+
+- Web: https://koernerclaudia.github.io/meet/
+- PWA: This app is also available as a Progressive Web App - meaning on your mobile browser you can click on the download button and 'Add it to your home screen' as a standalone app.
+
+
+## 6. Restrictions<a name="restrictions"></a>
+
+Right now, only people who can authenticate themselves with a Google Account can use and browse on the app.
+
+
+## User Stories & Scenarios, Gherkin<a name="userstories"></a>
 
 ### ***Feature 1: Filter Events By City***
 
