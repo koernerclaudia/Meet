@@ -58,8 +58,14 @@ const App = () => {
         </div>
         <div className='hr'></div>
         <div className="charts-container">
-        <div><EventGenresChart events={events} /></div>
-        <div><CityEventsChart allLocations={allLocations} events={events} /></div>
+        <div>
+        <h2>Event genres</h2>
+          <EventGenresChart events={events} />
+          </div>
+        <div>
+        <h2># of Events per city</h2>
+        <CityEventsChart allLocations={allLocations} events={events} />
+        </div>
         </div>
         <div className='hr'></div> 
         <h2>Events in {currentCity}</h2>
