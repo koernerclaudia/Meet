@@ -1,7 +1,5 @@
 # jsMeetUp - MeetApp built with React
 
-WIP - currently being built!
-
 ## Table of Contents 
 
 1. [Project Details](#projectdetails)
